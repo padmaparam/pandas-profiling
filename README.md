@@ -129,7 +129,7 @@ There is higher percentage of female customers who churn compared to male custom
 ## Modelling
 
 The categories Gender, Income, Card, Education and Marital status were all one hot encoded. The training data was standardized for some models.  We cannot afford to lose the customer here. If the customer is predicted that he will churn, but in real if he does not churn, it is bearable compared to other way. If we predict that the customer will not churn and if he churns, then we will lose a customer which is expensive. So, false negative is costly we are more concerned with recall. 
-</br>Tried different models to get better results. For a tree-based model, decided to choose Random Forest instead of Decision Tree as it has high variance and tendency to overfit. So, bias would be low. Hence considered multiple trees approach. Used Ensemble, Random Forest for bagging and Gradient Boosting for Boosting and got better results. 
+</br >Tried different models to get better results. For a tree-based model, decided to choose Random Forest instead of Decision Tree as it has high variance and tendency to overfit. So, bias would be low. Hence considered multiple trees approach. Used Ensemble, Random Forest for bagging and Gradient Boosting for Boosting and got better results. 
 Worked with different hyper parameters values before training each model. GridSearchCV is used for optimization of the hyper parameter. Performed a 5-fold cross validation. The best hyperparameter obtained during this process for each model is listed below.
 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture17.png" style=" width:100px ; height:100px " />
@@ -154,7 +154,7 @@ Total transaction Count and Amount seems the most important feature for predicti
 ## Recommendation
  	
 The Bank can attract new male customers who earn between $40K and 80K annually by offering free trials as they tend to stay longer. Additional incentives can be given to them if they fall in the age range 45 to 55 and married. A new branch can be opened in the area where all the above criteria is met. These were observed when the data was explored.
-But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Total Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
+<br />But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Total Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
 <a name="future-improvements"></a>
 ## Future Improvements
 
