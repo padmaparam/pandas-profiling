@@ -2,7 +2,7 @@
 
 # Bank Credit Card Customer Churn Prediction and Analysis
 
-[Exploratory](##expl)
+[Exploratory](#expl)
 - 
 ## Introduction
 
