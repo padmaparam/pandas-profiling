@@ -145,7 +145,7 @@ But these factors contributed most to customer churn in order in our best model.
 
 ## Future Improvements
 
-	We can remove some more outliers and columns that are linear and investigate further. This can be combined with additional data of other products that the customers use in the same bank and cluster their behavior for further marketing. 
+We can remove some more outliers and columns that are linear and investigate further. This can be combined with additional data of other products that the customers use in the same bank and cluster their behavior for further marketing. 
 	
 
 
