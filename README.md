@@ -4,6 +4,7 @@
 <br />[Introduction](#introduction)
 <br />[Data Wrangling](#datawrangling)
 <br />[Exploratory Data Analysis](#exploratory-data-analysis)
+<br />[Modelling](#modelling)
 <br />[Feature Importance](#feature-importance)
 <br />[Recommendation](#recommendation)
 <br />[Future Improvements](#future-improvements)
