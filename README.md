@@ -1,15 +1,20 @@
 # pandas-profiling
 
 # Bank Credit Card Customer Churn Prediction and Analysis
-
+<br />[Introduction](#introduction)
+<br />[Data Wrangling](#datawrangling)
 [Exploratory Data Analysis](#exploratory-data-analysis)
 <br />[Modelling](#modelling)
+<br />[Modelling](#modelling)
+<br />[Modelling](#modelling)
 
+<a name="introduction"></a>
 ## Introduction
 
 Customer churn is a major concern for big businesses. Losing a customer is awfully expensive for any business. The full cost of churn includes both lost revenue and marketing costs involved in replacing them with new ones. Identifying unhappy customers early on will help business win those customers with incentives, free trials promotions, and advertising.
 This project uses Machine Learning to identify those who will churn so action can be taken well in advance to retain those customers. Also, it investigates the factors that affect customer churning 
 
+<a name="datawrangling"></a>
 ## Data Wrangling
 
 The data consists of bank customers who own credit card. It has about 10,000 customers and 23 features describing each user. It includes Client number, Attrition Flag, Customer Age, Gender, Dependent count, Education Level, Marital Status, Income Category, Card Category, Months on book, Total Relationship Count, Months Inactive 12 mon, Contacts Count 12 mon, Credit Limit, Total Revolving Bal, Avg Open to Buy, Total Amt Chng Q4 Q1, Total Trans Amt, Total Trans Ct, Total Ct Chng Q4 Q1     and Avg Utilization Ratio.
