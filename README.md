@@ -34,64 +34,66 @@ Avg_open_to_buy and credit limit are highly correlated. Similarly, customer age 
 
 Customer s who left the bank had fewer transaction counts than existing customers.
 
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture2.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture2.png" style=" width:100px ; height:100px " />
 
 Customers who had higher transaction amount of at least 12000 seems to have stayed with the bank. They are satisfied customers who enjoy more operations with the bank. This seems to be a promising attribute to the model.
 
-
- <img src="" style=" width:100px ; height:100px " />
-
-Revolving Balance and Average Utilization Ratio
- 
+### Revolving Balance and Average Utilization Ratio
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture3.png" style=" width:100px ; height:100px " />
 
 There is more concentration of Revolving balance and utilization ratio at the lower levels for churned customers than existing customers. Existing customers have at least $500 as their minimum balance and their utilization is also exceptionally low.
 
- <img src="" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture4.png" style=" width:100px ; height:100px " />
  
-
-Education and Customer Churn
+### Education and Customer Churn
 
 	Customers who had college education and graduates have slightly higher rate of staying than doctorates. But the difference is extremely low. We cannot generalize any relation between churned customers and education. We can only conclude that there is higher percentage of customers who are graduates in the bank. 
-
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture5.png" style=" width:100px ; height:100px " />
  
-Income and Customer Churn
+### Income and Customer Churn
 	The bank has more customers who earn less than $40K than all other categories. 
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture6.png" style=" width:100px ; height:100px " />
 Hence, the impact of customer churn on the Income was compared based on the percentage. This was calculated based on the number of customers churned for a given Income category. For example, 7.74 customers belong to Income Category $120K if total number of churned customers is 100.  Out of total churned customers 7.74% belong to category $120K+
 
-  <img src="" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture7.png" style=" width:100px ; height:100px " />
+
 This represents that 40K-80K Income range has higher percentage of staying with bank that lower income. Customers whose income is $120K+ has slight difference in percentage which is not reliable. So, the bank must try to attract customers in 40K to 80K range more.
-Credit Limit and Utilization Ratio
+
+### Credit Limit and Utilization Ratio
 	The average utilization ratio is one of the indicators to show that customer is churning, most of the churned customers have lower credit limit and utilization ratio.  
- 
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture8.png" style=" width:100px ; height:100px " />
 This plot shows the effect of churn on credit limit.
-  <img src="" style=" width:100px ; height:100px " />
+ <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture9.png" style=" width:100px ; height:100px " />
+ 
 It implies that the median of credit limit of existing customer is almost the same that of churned customer. To check if this happened by chance, verified using hypothesis testing.
 Null Hypothesis: Mean of credit limit of churned customers equal to mean of credit limit of existing customers.
 Performed statistic test and obtained a p-value of 0.016. Since p-value is less than 0.5, we can reject the null hypothesis concluding that mean of credit limit of both sets are not equal.
-Age and Customer churn
-	 <img src="" style=" width:100px ; height:100px " />
+### Age and Customer churn
+	 
 The mean age of churned customer is slightly higher than that of existing customer. 
 Churned customer Mean Age:  46.65
 Existing customer Mean Age:  46.26
- <img src="" style=" width:100px ; height:100px " />
+ 
 Can we generalize this?  Verified with a statistics test.
 The distribution of customer age in the dataset is normal. Most of the values are between 40 and 55. 
-  <img src="" style=" width:100px ; height:100px " />
-Null Hypothesis: Average age of people who have churned is equal to avg age of people who have not churned.
+ 
+  <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture10.png" style=" width:100px ; height:100px " />
+  
+**Null Hypothesis: Average age of people who have churned is equal to avg age of people who have not churned.**
 P-value obtained for this is 0.067, which indicated that there is no significant association of average age between customers who churned and not churned.
-Number of Contacts and Months Inactive
- <img src="" style=" width:100px ; height:100px " />
+
+### Number of Contacts and Months Inactive
+ 
 	We would expect the customer contacts would be higher if they stay with bank. But there is an optimum level.  As seen below, if the number of contacts exceed 2 the bank must be cautious and look for any churning signal. It could also be possible that they are frustrated and calling often about a problem.
-  <img src="" style=" width:100px ; height:100px " />
+   <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture11.png" style=" width:100px ; height:100px " />
 The same can be observed if they do not have any activity with the bank for more than 2 months.
-Card Category and Average Open to Buy
- <img src="" style=" width:100px ; height:100px " />
+### Card Category and Average Open to Buy
+ 
 Card Category did not have any effect on customer churning. But we can find that there are greater number of Blue card holders than Gold, Platinum or Silver.
 
-    <img src="" style=" width:100px ; height:100px " />
+     <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture12.png" style=" width:100px ; height:100px " />
 
 Average open to buy is higher for Gold, Silver and Platinum card members which is not surprising as they have higher Credit limit. Though there are more Blue card holders, Silver Card has higher variance which implies they have lower balance. So, they take more loans.
- <img src="" style=" width:100px ; height:100px " />
-
+ 
 
 
