@@ -4,7 +4,7 @@
 
 [Exploratory Data Analysis](#exploratory-data-analysis)
 
-[Heat Map indicating correlation of numerical attributes] (##heatmap)
+[Heat Map indicating correlation of numerical attributes] (#heatmap)
 - 
 ## Introduction
 
