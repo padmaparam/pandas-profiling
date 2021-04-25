@@ -30,6 +30,8 @@ Here is the description of few metrics in the data which are not trivial.
 The churned customers are very few in the dataset. 83.93% of customers remain with the bank and attired customers make only 16.07%, so this is highly skewed. 
 <br /> <br />Each customer is uniquely identified by Client Number. Customer Age ranges from 25 to 70, with most of them between 40 and 55. They are sorted into categories. 
 Outliers are noticed on these columns Customer_Age, Months_on_book, Months_Inactive_12_mon, Contacts_Count_12_mon, Credit_Limit, Avg_Open_To_Buy, Total_Trans_Amt, Total_Trans_Ct, and Total_Ct_Chng_Q4_Q1. There is a strong relation between gender and income category.
+
+<a name="heatmap"></a>
 ### Heat Map indicating correlation of numerical attributes 
 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/HeatMap.png" style=" width:100px ; height:100px " />
