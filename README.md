@@ -3,7 +3,6 @@
 # Bank Credit Card Customer Churn Prediction and Analysis
 
 [Exploratory Data Analysis](#exploratory-data-analysis)
-
 [Modelling](#modelling)
 
 ## Introduction
