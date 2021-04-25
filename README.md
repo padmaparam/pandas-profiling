@@ -3,9 +3,8 @@
 # Bank Credit Card Customer Churn Prediction and Analysis
 
 [Exploratory Data Analysis](#exploratory-data-analysis)
+[Modelling](#modelling)
 
-[Heat Map indicating correlation of numerical attributes] (#heatmap)
-- 
 ## Introduction
 
 Customer churn is a major concern for big businesses. Losing a customer is awfully expensive for any business. The full cost of churn includes both lost revenue and marketing costs involved in replacing them with new ones. Identifying unhappy customers early on will help business win those customers with incentives, free trials promotions, and advertising.
@@ -106,7 +105,6 @@ Card Category did not have any effect on customer churning. But we can find that
 
 Average open to buy is higher for Gold, Silver and Platinum card members which is not surprising as they have higher Credit limit. Though there are more Blue card holders, Silver Card has higher variance which implies they have lower balance. So, they take more loans.
  
-***************
 ### Marital Status and Customer Churn
 There are more married customers in the bank than single and divorced. 
 	 
@@ -121,6 +119,7 @@ There are more female customers than male customers in the bank.
  <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture16.png" style=" width:100px ; height:100px " />
 There is higher percentage of female customers who churn compared to male customers. Here the percentage is calculated based on total churned customers. For example, 52% of customers who are churned are male.
 
+<a name="modelling"></a>
 ## Modelling
 
 The categories Gender, Income, Card, Education and Marital status were all one hot encoded. The training data was standardized for some models.  We cannot afford to lose the customer here. If the customer is predicted that he will churn, but in real if he does not churn, it is bearable compared to other way. If we predict that the customer will not churn and if he churns, then we will lose a customer which is expensive. So, false negative is costly we are more concerned with recall. 
