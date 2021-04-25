@@ -3,6 +3,7 @@
 # Bank Credit Card Customer Churn Prediction and Analysis
 
 [Exploratory Data Analysis](#exploratory-data-analysis)
+[Heat Map indicating correlation of numerical attributes] (##heatmap)
 - 
 ## Introduction
 
