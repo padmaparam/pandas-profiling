@@ -1,129 +1,61 @@
 # pandas-profiling
 
-# Bank Credit Card Customer Churn Prediction and Analysis
+# Sale Price Prediction and Analysis of New York City Property
 <br />[Introduction](#introduction)
-<br />[Data Wrangling](#datawrangling)
-<br />[Exploratory Data Analysis](#exploratory-data-analysis)
+<br />[Dataset](#dataset)
+<br />[Analysis](#analysis)
 <br />[Modelling](#modelling)
-<br />[Feature Importance](#feature-importance)
-<br />[Recommendation](#recommendation)
-<br />[Future Improvements](#future-improvements)
+<br />[Future Research](#future-research)
 
 <a name="introduction"></a>
 ## Introduction
 
-Customer churn is a major concern for big businesses. Losing a customer is awfully expensive for any business. The full cost of churn includes both lost revenue and marketing costs involved in replacing them with new ones. Identifying unhappy customers early on will help business win those customers with incentives, free trials promotions, and advertising.
-This project uses Machine Learning to identify those who will churn so action can be taken well in advance to retain those customers. Also, it investigates the factors that affect customer churning 
+This project is inspired by the new developments in the real estate despite the pandemic and wondering how the sales were in famous cities during the year 2020.   
+<br /><br />The motive of this project is to see the trends in real estate in major boroughs of New York last year and predict the sale price for a residential or commercial unit. 
 
-<a name="datawrangling"></a>
-## Data Wrangling
 
-The data consists of bank customers who own credit card. It has about 10,000 customers and 23 features describing each user. It includes Client number, Attrition Flag, Customer Age, Gender, Dependent count, Education Level, Marital Status, Income Category, Card Category, Months on book, Total Relationship Count, Months Inactive 12 mon, Contacts Count 12 mon, Credit Limit, Total Revolving Bal, Avg Open to Buy, Total Amt Chng Q4 Q1, Total Trans Amt, Total Trans Ct, Total Ct Chng Q4 Q1 and Avg Utilization Ratio.
+<a name="dataset"></a>
+## Dataset
 
-This data is obtained from Kaggle at the link https://www.kaggle.com/sakshigoyal7/credit-card-customers
-Here is the description of few metrics in the data which are not trivial.
-<br />Revolving Balance: Portion of credit card spending that goes unpaid at the end of a billing cycle
-<br />Average Open to Buy: The difference between the credit limit assigned to cardholder account and the present balance on the account
-<br />Utilization Ratio: How much customer owes divided by credit limit expressed in percentage
-<br />Relationship Count: Number of products held by the customer
-<br />Amounts change Q4_Q1: Change in transaction amount in Q4 over Q1
-<br />Months on book:  Number of months the customer stayed with the bank
+The data is extracted from New York department of Finance web site at this link. https://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
+The data has properties that were sold during 2020 in New York city with a separate listing for each borough namely Manhattan, Bronx, Brooklyn, Queens, and Staten Island. All these listings were combined to a single list which helped compare the boroughs. The metrics that were part of this sales information were Borough, Neighborhood, Building Class Category, Tax class at present, Block, Lot, Easement, building class at present, Address, Apartment Number, ZIP code, Residential units, Commercial units, Total units, Land square feet, Gross square feet, Year built, Tax class at time of sale, Building class at time of sale, Sale price and Sale date. There were about 35000 observations.
+<br /><br />The data includes for different tax classes. 
+<br /><br />Class 1: Includes most residential property of up to three units (such as one-, two-, and three-family homes and small stores or offices with one or two attached apartments), vacant land that is zoned for residential use, and most condominiums that are not more than three stories. 
+<br /><br />Class 2: Includes all other property that is primarily residential, such as cooperatives and condominiums. 
+<br /><br />Class 3: Includes property with equipment owned by a gas, telephone, or electric company. 
+<br /><br />Class 4: Includes all other properties not included in class 1,2, and 3, such as offices, factories, warehouses, garage buildings, etc.
+<br /><br />Building Class Category: similar properties grouped by broad usage
 
-<a name="exploratory-data-analysis"></a>
-## Exploratory Data Analysis
+<a name="analysis"></a>
+## Analysis
 
-The churned customers are very few in the dataset. 83.93% of customers remain with the bank and attired customers make only 16.07%, so this is highly skewed. 
-<br /> <br />Each customer is uniquely identified by Client Number. Customer Age ranges from 25 to 70, with most of them between 40 and 55. They are sorted into categories. 
-Outliers are noticed on these columns Customer_Age, Months_on_book, Months_Inactive_12_mon, Contacts_Count_12_mon, Credit_Limit, Avg_Open_To_Buy, Total_Trans_Amt, Total_Trans_Ct, and Total_Ct_Chng_Q4_Q1. There is a strong relation between gender and income category.
-
-<a name="heatmap"></a>
-### Heat Map indicating correlation of numerical attributes 
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/HeatMap.png" style=" width:100px ; height:100px " />
-Avg_open_to_buy and credit limit are highly correlated. Similarly, customer age and Months on book. Total_trans_count and Total_trans_amt are also highly correlated. Avg_utilization_ratio and Total_Revolving_bal also seem to be correlated, but we will verify further with the numbers and behavior.
-
-### Transaction Count and Transaction Amount
-
-Customer s who left the bank had fewer transaction counts than existing customers.
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture2.png" style=" width:100px ; height:100px " />
-
-Customers who had higher transaction amount of at least 12000 seems to have stayed with the bank. They are satisfied customers who enjoy more operations with the bank. This seems to be a promising attribute to the model.
-
-### Revolving Balance and Average Utilization Ratio
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture3.png" style=" width:100px ; height:100px " />
-
-There is more concentration of Revolving balance and utilization ratio at the lower levels for churned customers than existing customers. Existing customers have at least $500 as their minimum balance and their utilization is also exceptionally low.
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture4.png" style=" width:100px ; height:100px " />
+The sale price was skewed, and some sales included 0’s where the property were transferred within the family or donated to charity. So only sales between 100,000 and 3 million were considered for analysis. Some sales included coops housing where people buy shares in that building and occupy. These were also considered as sales in our analysis and modelling. 
+Here is the correlation matrix of main metrics used in the dataset. 
  
-### Education and Customer Churn
-
-Customers who had college education and graduates have slightly higher rate of staying than doctorates. But the difference is extremely low. We cannot generalize any relation between churned customers and education. We can only conclude that there is higher percentage of customers who are graduates in the bank.
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture6.png" style=" width:100px ; height:100px " />
+Residential Units and Total Units are highly correlated. Also, Commercial units and Land Square Feet is correlated. Hence removed Residential and Commercial Units in modelling.  Very few entries did not have year built which was removed.
+Land Square Feet and Gross square Feet had many null values. These were filled using KNN imputing. Total Units that were not populated, were the coop housing. So, filled them with value 1. 
+Here are some of the trends noticed in the real estate analysis. 
  
-### Income and Customer Churn
-The bank has more customers who earn less than $40K than all other categories.
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture7.png" style=" width:100px ; height:100px " />
+More sales were in Queens than other boroughs last year and Bronx had the least property sales
+Some building categories had less than 10 sales, so they were merged to category Others. Here is the distribution of sale price for a given building category.
 
-Hence, the impact of customer churn on the Income was compared based on the percentage. This was calculated based on the number of customers churned for a given Income category. For example, 7.74 customers belong to Income Category $120K if total number of churned customers is 100.  Out of total churned customers 7.74% belong to category $120K+
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture8.png" style=" width:100px ; height:100px " />
-
-This represents that 40K-80K Income range has higher percentage of staying with bank that lower income. Customers whose income is $120K+ has slight difference in percentage which is not reliable. So, the bank must try to attract customers in 40K to 80K range more.
-
-### Credit Limit and Utilization Ratio
-
-The average utilization ratio is one of the indicators to show that customer is churning, most of the churned customers have lower credit limit and utilization ratio.  
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture9.png" style=" width:100px ; height:100px " />
-This plot shows the effect of churn on credit limit.
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture10.png" style=" width:100px ; height:100px " />
  
-It implies that the median of credit limit of existing customer is almost the same that of churned customer. To check if this happened by chance, verified using hypothesis testing.
-Null Hypothesis: Mean of credit limit of churned customers equal to mean of credit limit of existing customers.
-Performed statistic test and obtained a p-value of 0.016. Since p-value is less than 0.5, we can reject the null hypothesis concluding that mean of credit limit of both sets are not equal.
-### Age and Customer churn
-	 
-The mean age of churned customer is slightly higher than that of existing customer. 
-<br />Churned customer Mean Age:  46.65
-<br />Existing customer Mean Age:  46.26
- 
-<br />Can we generalize this?  Verified with a statistics test.
-<br />The distribution of customer age in the dataset is normal. Most of the values are between 40 and 55. 
- 
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture11.png" style=" width:100px ; height:100px " />
-  
-**Null Hypothesis: Average age of people who have churned is equal to avg age of people who have not churned.**
-P-value obtained for this is 0.067, which indicated that there is no significant association of average age between customers who churned and not churned.
 
-### Number of Contacts and Months Inactive
-We would expect the customer contacts would be higher if they stay with bank. But there is an optimum level.  As seen below, if the number of contacts exceed 2 the bank must be cautious and look for any churning signal. It could also be possible that they are frustrated and calling often about a problem.
+Factories had the highest sale price and condo hotels had the least median sale price.
+Here is the distribution of vacant land purchases in 2020.
  
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture12.png" style=" width:100px ; height:100px " />
-
-The same can be observed if they do not have any activity with the bank for more than 2 months.
-### Card Category and Average Open to Buy
+There are more chances of new housing and commercial construction in Staten Island than in other boroughs and the least in Manhattan. Same in terms of neighborhood.
  
-Card Category did not have any effect on customer churning. But we can find that there are greater number of Blue card holders than Gold, Platinum or Silver.
 
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture13.png" style=" width:100px ; height:100px " />
-
-Average open to buy is higher for Gold, Silver and Platinum card members which is not surprising as they have higher Credit limit. Though there are more Blue card holders, Silver Card has higher variance which implies they have lower balance. So, they take more loans.
  
-### Marital Status and Customer Churn
-There are more married customers in the bank than single and divorced. 
-	 
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture14.png" style=" width:100px ; height:100px " />
-Large percentage of married customers are loyal to the bank. These customers probably have a stable income and stay in the same location. Whereas there us higher percentage of Single customers who have churned.
-
-### Gender and Customer Churn
-There are more female customers than male customers in the bank. 
-
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture15.png" style=" width:100px ; height:100px " />
+Few houses in Brooklyn are incredibly old built in 1800's and their price is comparable with newer houses elsewhere. Bronx has comparatively lesser priced houses than other boroughs. Manhattan has more expensive houses.
  
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture16.png" style=" width:100px ; height:100px " />
-There is higher percentage of female customers who churn compared to male customers. Here the percentage is calculated based on total churned customers. For example, 52% of customers who are churned are male.
+More homes of higher tax brackets were sold in Queens and none in Manhattan in 2020. Also, very few commercial and industrial properties were sold last year probably due to COVID. Most of the sales for Manhattan was in Tax class 2 which is not surprising as it has many properties which has more than 3 units.
+ 
+Residences that had 9 units had the highest median sale price compared to even higher units. The multi-unit building could be in Manhattan and the single unit could be in Brooklyn. Similarly, for commercial buildings below has 3 units as highly priced sales.
+
+ 
+
 
 <a name="modelling"></a>
 ## Modelling
