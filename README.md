@@ -52,14 +52,12 @@ Customers who had college education and graduates have slightly higher rate of s
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture6.png" style=" width:100px ; height:100px " />
  
 ### Income and Customer Churn
-The bank has more customers who earn less than $40K than all other categories.	
-
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture7.png" style=" width:100px ; height:100px " />
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture7.png" style=" width:100px ; height:100px " />
+The bank has more customers who earn less than $40K than all other categories.
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture7.png" style=" width:100px ; height:100px " />
 
 Hence, the impact of customer churn on the Income was compared based on the percentage. This was calculated based on the number of customers churned for a given Income category. For example, 7.74 customers belong to Income Category $120K if total number of churned customers is 100.  Out of total churned customers 7.74% belong to category $120K+
 
-<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture8.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture8.png" style=" width:100px ; height:100px " />
 
 This represents that 40K-80K Income range has higher percentage of staying with bank that lower income. Customers whose income is $120K+ has slight difference in percentage which is not reliable. So, the bank must try to attract customers in 40K to 80K range more.
 
@@ -68,7 +66,7 @@ This represents that 40K-80K Income range has higher percentage of staying with 
 The average utilization ratio is one of the indicators to show that customer is churning, most of the churned customers have lower credit limit and utilization ratio.  
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture9.png" style=" width:100px ; height:100px " />
 This plot shows the effect of churn on credit limit.
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture10.png" style=" width:100px ; height:100px " />
+ <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture9.png" style=" width:100px ; height:100px " />
  
 It implies that the median of credit limit of existing customer is almost the same that of churned customer. To check if this happened by chance, verified using hypothesis testing.
 Null Hypothesis: Mean of credit limit of churned customers equal to mean of credit limit of existing customers.
