@@ -66,7 +66,7 @@ This represents that 40K-80K Income range has higher percentage of staying with 
 The average utilization ratio is one of the indicators to show that customer is churning, most of the churned customers have lower credit limit and utilization ratio.  
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture9.png" style=" width:100px ; height:100px " />
 This plot shows the effect of churn on credit limit.
- <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture9.png" style=" width:100px ; height:100px " />
+ <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture10.png" style=" width:100px ; height:100px " />
  
 It implies that the median of credit limit of existing customer is almost the same that of churned customer. To check if this happened by chance, verified using hypothesis testing.
 Null Hypothesis: Mean of credit limit of churned customers equal to mean of credit limit of existing customers.
@@ -74,13 +74,13 @@ Performed statistic test and obtained a p-value of 0.016. Since p-value is less 
 ### Age and Customer churn
 	 
 The mean age of churned customer is slightly higher than that of existing customer. 
-Churned customer Mean Age:  46.65
-Existing customer Mean Age:  46.26
+<br />Churned customer Mean Age:  46.65
+<br />Existing customer Mean Age:  46.26
  
-Can we generalize this?  Verified with a statistics test.
-The distribution of customer age in the dataset is normal. Most of the values are between 40 and 55. 
+<br />Can we generalize this?  Verified with a statistics test.
+<br />The distribution of customer age in the dataset is normal. Most of the values are between 40 and 55. 
  
-  <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture10.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture11.png" style=" width:100px ; height:100px " />
   
 **Null Hypothesis: Average age of people who have churned is equal to avg age of people who have not churned.**
 P-value obtained for this is 0.067, which indicated that there is no significant association of average age between customers who churned and not churned.
@@ -94,7 +94,7 @@ The same can be observed if they do not have any activity with the bank for more
  
 Card Category did not have any effect on customer churning. But we can find that there are greater number of Blue card holders than Gold, Platinum or Silver.
 
-     <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture12.png" style=" width:100px ; height:100px " />
+     <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture12.png" style=" width:100px ; height:100px " />
 
 Average open to buy is higher for Gold, Silver and Platinum card members which is not surprising as they have higher Credit limit. Though there are more Blue card holders, Silver Card has higher variance which implies they have lower balance. So, they take more loans.
  
