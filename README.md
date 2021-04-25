@@ -32,6 +32,7 @@ The data has properties that were sold during 2020 in New York city with a separ
 The sale price was skewed, and some sales included 0’s where the property were transferred within the family or donated to charity. So only sales between 100,000 and 3 million were considered for analysis. Some sales included coops housing where people buy shares in that building and occupy. These were also considered as sales in our analysis and modelling. 
 Here is the correlation matrix of main metrics used in the dataset. 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/realestate/picture1.png" style=" width:100px ; height:100px " />
+
 Residential Units and Total Units are highly correlated. Also, Commercial units and Land Square Feet is correlated. Hence removed Residential and Commercial Units in modelling.  Very few entries did not have year built which was removed.
 Land Square Feet and Gross square Feet had many null values. These were filled using KNN imputing. Total Units that were not populated, were the coop housing. So, filled them with value 1. 
 Here are some of the trends noticed in the real estate analysis. 
