@@ -2,7 +2,7 @@
 
 # Bank Credit Card Customer Churn Prediction and Analysis
 
-[Exploratory](#expl)
+[Exploratory Data Analysis](#exploratory-data-analysis)
 - 
 ## Introduction
 
@@ -22,8 +22,8 @@ Here is the description of few metrics in the data which are not trivial.
 <br />Amounts change Q4_Q1: Change in transaction amount in Q4 over Q1
 <br />Months on book:  Number of months the customer stayed with the bank
 
-<a name="expl"></a>
-## expl
+<a name="exploratory-data-analysis"></a>
+## Exploratory Data Analysis
 
 The churned customers are very few in the dataset. 83.93% of customers remain with the bank and attired customers make only 16.07%, so this is highly skewed. 
 <br /> <br />Each customer is uniquely identified by Client Number. Customer Age ranges from 25 to 70, with most of them between 40 and 55. They are sorted into categories. 
