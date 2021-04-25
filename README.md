@@ -72,7 +72,7 @@ Residences that had 9 units had the highest median sale price compared to even h
 Target metric is Sale price. The models that were used for predicting are Linear Regression, SVM, Random Forest, KNN and Gradient Boosting. The numeric variables were standardized for some models. 
 Model 
 
-<img src="https://github.com/padmaparam/Screenshots/blob/main/realestate/Picture10.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/realestate/picture10.png" style=" width:100px ; height:100px " />
 
 It is evident that Gradient Boosting is the best model compared to all other models. The hyperparameters that produced the best results were 
 learning_rate: 0.05, max_depth: 7 and n_estimators: 1000
