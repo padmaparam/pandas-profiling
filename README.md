@@ -153,7 +153,7 @@ Total transaction Count and Amount seems the most important feature for predicti
 ## Recommendation
  	
 The Bank can attract new male customers who earn between $40K and 80K annually by offering free trials as they tend to stay longer. Additional incentives can be given to them if they fall in the age range 45 to 55 and married. A new branch can be opened in the area where all the above criteria is met. These were observed when the data was explored.
-But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Toral Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
+But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Total Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
 <a name="future-improvements"></a>
 ## Future Improvements
 
