@@ -3,10 +3,10 @@
 # Bank Credit Card Customer Churn Prediction and Analysis
 <br />[Introduction](#introduction)
 <br />[Data Wrangling](#datawrangling)
-[Exploratory Data Analysis](#exploratory-data-analysis)
-<br />[Modelling](#modelling)
-<br />[Modelling](#modelling)
-<br />[Modelling](#modelling)
+<br />[Exploratory Data Analysis](#exploratory-data-analysis)
+<br />[Feature Importance](#feature-importance)
+<br />[Recommendation](#recommendation)
+<br />[Future Improvements](#future-improvements)
 
 <a name="introduction"></a>
 ## Introduction
@@ -142,18 +142,19 @@ The ROC curve explains the relation between True positive and True Negatives for
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture19.png" style=" width:100px ; height:100px " /> 
 
 The area under the ROC curve is 0.99246 
+<a name="feature-importance"></a>
 ## Feature Importance
 Important features were plotted for best model Gradient Boosting. 
 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture20.png" style=" width:100px ; height:100px " /> 
 
 Total transaction Count and Amount seems the most important feature for predicting the customer churn.
-
+<a name="recommendation"></a>
 ## Recommendation
  	
 The Bank can attract new male customers who earn between $40K and 80K annually by offering free trials as they tend to stay longer. Additional incentives can be given to them if they fall in the age range 45 to 55 and married. A new branch can be opened in the area where all the above criteria is met. These were observed when the data was explored.
 But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Toral Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
-
+<a name="future-improvements"></a>
 ## Future Improvements
 
 We can remove some more outliers and columns that are linear and investigate further. This can be combined with additional data of other products that the customers use in the same bank and cluster their behavior for further marketing. 
