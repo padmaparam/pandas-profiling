@@ -86,17 +86,67 @@ The mean age of churned customer is slightly higher than that of existing custom
 P-value obtained for this is 0.067, which indicated that there is no significant association of average age between customers who churned and not churned.
 
 ### Number of Contacts and Months Inactive
+We would expect the customer contacts would be higher if they stay with bank. But there is an optimum level.  As seen below, if the number of contacts exceed 2 the bank must be cautious and look for any churning signal. It could also be possible that they are frustrated and calling often about a problem.
  
-	We would expect the customer contacts would be higher if they stay with bank. But there is an optimum level.  As seen below, if the number of contacts exceed 2 the bank must be cautious and look for any churning signal. It could also be possible that they are frustrated and calling often about a problem.
-   <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture11.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture12.png" style=" width:100px ; height:100px " />
+
 The same can be observed if they do not have any activity with the bank for more than 2 months.
 ### Card Category and Average Open to Buy
  
 Card Category did not have any effect on customer churning. But we can find that there are greater number of Blue card holders than Gold, Platinum or Silver.
 
-     <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture12.png" style=" width:100px ; height:100px " />
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture13.png" style=" width:100px ; height:100px " />
 
 Average open to buy is higher for Gold, Silver and Platinum card members which is not surprising as they have higher Credit limit. Though there are more Blue card holders, Silver Card has higher variance which implies they have lower balance. So, they take more loans.
  
+***************
+### Marital Status and Customer Churn
+There are more married customers in the bank than single and divorced. 
+	 
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture14.png" style=" width:100px ; height:100px " />
+Large percentage of married customers are loyal to the bank. These customers probably have a stable income and stay in the same location. Whereas there us higher percentage of Single customers who have churned.
+
+### Gender and Customer Churn
+There are more female customers than male customers in the bank. 
+
+ <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture15.png" style=" width:100px ; height:100px " />
+ 
+ <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture16.png" style=" width:100px ; height:100px " />
+There is higher percentage of female customers who churn compared to male customers. Here the percentage is calculated based on total churned customers. For example, 52% of customers who are churned are male.
+
+## Modelling
+
+The categories Gender, Income, Card, Education and Marital status were all one hot encoded. The training data was standardized for some models.  We cannot afford to lose the customer here. If the customer is predicted that he will churn, but in real if he does not churn, it is bearable compared to other way. If we predict that the customer will not churn and if he churns, then we will lose a customer which is expensive. So, false negative is costly we are more concerned with recall. 
+</br>Tried different models to get better results. For a tree-based model, decided to choose Random Forest instead of Decision Tree as it has high variance and tendency to overfit. So, bias would be low. Hence considered multiple trees approach. Used Ensemble, Random Forest for bagging and Gradient Boosting for Boosting and got better results. 
+Worked with different hyper parameters values before training each model. GridSearchCV is used for optimization of the hyper parameter. Performed a 5-fold cross validation. The best hyperparameter obtained during this process for each model is listed below.
+
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture17.png" style=" width:100px ; height:100px " />
+
+Implemented the model using Scikit library. More details are available in the notebook for each model. The performance metrics collected are confusion matrix and classification report for each model. The best model was further verified by ROC curve and AOC value.
+The highest accuracy for all models is 0.97 and the highest recall is 0.90. Over sampling helped improve the recall value by a small percentage. This table explains the outcomes of all models. 
+
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture18.png" style=" width:100px ; height:100px " />
+Gradient Boosting is the best model looking at the recall value. It is even better after over sampling using SMOTE as the data set was imbalanced. 
+The ROC curve explains the relation between True positive and True Negatives for our model.
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture19.png" style=" width:100px ; height:100px " /> 
+
+The area under the ROC curve is 0.99246 
+## Feature Importance
+Important features were plotted for best model Gradient Boosting. 
+
+<img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/Picture20.png" style=" width:100px ; height:100px " /> 
+
+Total transaction Count and Amount seems the most important feature for predicting the customer churn.
+
+## Recommendation
+ 	
+The Bank can attract new male customers who earn between $40K and 80K annually by offering free trials as they tend to stay longer. Additional incentives can be given to them if they fall in the age range 45 to 55 and married. A new branch can be opened in the area where all the above criteria is met. These were observed when the data was explored.
+But these factors contributed most to customer churn in order in our best model. Total Transaction Amount, Total Transaction Count, Total Revolving balance, Toral Relationship Count, Total Count change between Q4 and Q1, Total Amount change between Q4 and Q1, Gender, Avg Utilization ratio, Credit Limit.
+
+## Future Improvements
+
+	We can remove some more outliers and columns that are linear and investigate further. This can be combined with additional data of other products that the customers use in the same bank and cluster their behavior for further marketing. 
+	
+
 
 
