@@ -1,8 +1,8 @@
 # pandas-profiling
 
-Bank Credit Card Customer Churn Prediction and Analysis
+# Bank Credit Card Customer Churn Prediction and Analysis
 
-**Introduction**
+## Introduction
 
 Customer churn is a major concern for big businesses. Losing a customer is awfully expensive for any business. The full cost of churn includes both lost revenue and marketing costs involved in replacing them with new ones. Identifying unhappy customers early on will help business win those customers with incentives, free trials promotions, and advertising.
 This project uses Machine Learning to identify those who will churn so action can be taken well in advance to retain those customers. Also, it investigates the factors that affect customer churning 
