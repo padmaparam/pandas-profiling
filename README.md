@@ -47,12 +47,14 @@ There is more concentration of Revolving balance and utilization ratio at the lo
  
 ### Education and Customer Churn
 
-	Customers who had college education and graduates have slightly higher rate of staying than doctorates. But the difference is extremely low. We cannot generalize any relation between churned customers and education. We can only conclude that there is higher percentage of customers who are graduates in the bank. 
+Customers who had college education and graduates have slightly higher rate of staying than doctorates. But the difference is extremely low. We cannot generalize any relation between churned customers and education. We can only conclude that there is higher percentage of customers who are graduates in the bank. 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture5.png" style=" width:100px ; height:100px " />
  
 ### Income and Customer Churn
-	The bank has more customers who earn less than $40K than all other categories. 
+The bank has more customers who earn less than $40K than all other categories. 
+	
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture6.png" style=" width:100px ; height:100px " />
+
 Hence, the impact of customer churn on the Income was compared based on the percentage. This was calculated based on the number of customers churned for a given Income category. For example, 7.74 customers belong to Income Category $120K if total number of churned customers is 100.  Out of total churned customers 7.74% belong to category $120K+
 
 <img src="https://github.com/padmaparam/Screenshots/blob/main/CustomerChurn/picture7.png" style=" width:100px ; height:100px " />
